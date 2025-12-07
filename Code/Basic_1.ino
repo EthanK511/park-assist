@@ -1,14 +1,13 @@
 #include <Adafruit_NeoPixel.h>
 #include <NewPing.h>
 
-// ---- Pins ----
-#define LED_PIN        A0   // Purple wire (data)
+
+#define LED_PIN        A0 
 #define NUM_LEDS       8
 
 #define TRIGGER_PIN    9
 #define ECHO_PIN       10
 
-// ---- Sonar setup ----
 #define MAX_DIST_CM    400
 #define CRITICAL_CM    30
 #define SAMPLES        3
@@ -16,7 +15,6 @@
 NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DIST_CM);
 Adafruit_NeoPixel strip(NUM_LEDS, LED_PIN, NEO_GRB + NEO_KHZ800);
 
-// ---- Distance Read ----
 unsigned int readDistance() {
   unsigned int vals[SAMPLES];
 
@@ -27,7 +25,6 @@ unsigned int readDistance() {
     delay(10);
   }
 
-  // Sort small set
   for (int i = 0; i < SAMPLES - 1; i++)
     for (int j = i + 1; j < SAMPLES; j++)
       if (vals[j] < vals[i]) {
@@ -36,7 +33,6 @@ unsigned int readDistance() {
         vals[j] = t;
       }
 
-  // Average
   unsigned int sum = 0;
   for (int i = 0; i < SAMPLES; i++) sum += vals[i];
   unsigned int avg = sum / SAMPLES;
@@ -45,7 +41,6 @@ unsigned int readDistance() {
   return avg;
 }
 
-// ---- LED Bar Drawing ----
 void setBar(int count, unsigned int dist) {
   strip.clear();
 
