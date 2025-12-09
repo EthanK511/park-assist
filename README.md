@@ -1,6 +1,9 @@
 Park-Assist
 Overview
 
+<img width="477" height="358" alt="Screenshot 2025-12-09 10 23 09 AM" src="https://github.com/user-attachments/assets/0e9e62a2-84f4-44b2-b751-08d0bcf7757d" />
+
+
 Park-Assist is a simple DIY parking aid built around an ultrasonic sensor, an Arduino Nano, and an LED strip. As you approach an obstacle, the LEDs progressively light up — turning more numerous and redder — to give you intuitive visual feedback on how close you are to the object ahead.
 
 Features
