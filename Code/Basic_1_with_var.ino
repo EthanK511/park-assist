@@ -9,9 +9,9 @@
 #define MAX_DIST_CM    400
 #define SAMPLES        3
 
-int CAR_NOSE_OFFSET_CM = 70;  
+int CAR_NOSE_OFFSET_CM = 120;  // The distance from the point that the sensor is to the front bumber of your car
 
-int TARGET_STOP_DISTANCE_CM = 50;
+int TARGET_STOP_DISTANCE_CM = 50;  // The desired distance from the front of your car to the next car
 
 #define CRITICAL_FLASH_SPEED_MS 200
 
